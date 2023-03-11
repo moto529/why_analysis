@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_11_040002) do
+ActiveRecord::Schema.define(version: 2023_03_11_100537) do
 
   create_table "analyses", charset: "utf8mb4", force: :cascade do |t|
     t.string "target"
@@ -20,10 +20,19 @@ ActiveRecord::Schema.define(version: 2023_03_11_040002) do
     t.index ["user_id"], name: "index_analyses_on_user_id"
   end
 
+  create_table "is_whies", charset: "utf8mb4", force: :cascade do |t|
+    t.string "result", null: false
+    t.bigint "analysis_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["analysis_id"], name: "index_is_whies_on_analysis_id"
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "analyses", "users"
+  add_foreign_key "is_whies", "analyses"
 end
