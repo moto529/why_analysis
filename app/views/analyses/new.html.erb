@@ -1,0 +1,7 @@
+<div class="form_group">
+  <%= form_with model: @analysis, url: analyses_path do |f| %>
+    <%= f.label :target, "分析対象" %>
+    <%= f.text_field :target %>
+    <%= f.submit %>
+  <% end %>
+</div>
