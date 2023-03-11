@@ -8,7 +8,7 @@ class AnalysesController < ApplicationController
     if @analysis.save
       redirect_to new_analysis_path, notice: "Great!"
     else
-      render :new, notice: "Sorry"
+      redirect_to new_analysis_path, notice: "Sorry"
     end
   end
 
