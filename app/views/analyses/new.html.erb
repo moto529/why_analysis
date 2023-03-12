@@ -1,7 +1,18 @@
-<div class="form_group">
-  <%= form_with model: @analysis, url: analyses_path do |f| %>
-    <%= f.label :target, "分析対象" %>
-    <%= f.text_field :target %>
-    <%= f.submit %>
-  <% end %>
-</div>
+<div class="l-main">
+  <div class="l-card">
+    <div class="l-card-question_sentence">何を分析しますか？</div>
+      <div class="l-card-form_group">
+        <%= form_with model: @analysis, url: analyses_path do |f| %>
+          <div class="l-card-form_group__label">
+            <%= f.label :target, "どんなことを深掘りたいですか" %>
+          </div>
+          <div class="l-card-form_group__input">
+            <%= f.text_field :target, placeholder: "いつどんなことをしたのか" %>
+          </div>
+          <div class="l-card-form_group__btn">
+            <%= f.submit "分析をスタートする" %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+<div>
