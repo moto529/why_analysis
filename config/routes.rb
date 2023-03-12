@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   resources :analyses, only: %i[new create] do
     resources :is_whies, only: %i[new create]
