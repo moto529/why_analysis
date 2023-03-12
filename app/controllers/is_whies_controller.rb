@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class IsWhiesController < ApplicationController
   def new
     @is_why = IsWhy.new
@@ -8,14 +10,11 @@ class IsWhiesController < ApplicationController
 
   def create
     @is_why = IsWhy.new(is_why_params)
-    if @is_why.save
-      redirect_to new_analysis_is_why_path
-    else
-      redirect_to new_analysis_is_why_path
-    end
+    redirect_to new_analysis_is_why_path
   end
 
   private
+
   def is_why_params
     params.require(:is_why).permit(:result).merge(analysis_id: params[:analysis_id])
   end

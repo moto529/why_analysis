@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateIsWhies < ActiveRecord::Migration[6.1]
   def change
     create_table :is_whies do |t|
