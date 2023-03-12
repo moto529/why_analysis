@@ -10,7 +10,11 @@ class IsWhiesController < ApplicationController
 
   def create
     @is_why = IsWhy.new(is_why_params)
-    redirect_to new_analysis_is_why_path
+    if @is_why.save
+      redirect_to new_analysis_is_why_path
+    else
+      redirect_to new_analysis_is_why_path
+    end
   end
 
   private
