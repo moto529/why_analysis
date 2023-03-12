@@ -3,6 +3,12 @@
 <% end %>
 <div class="l-main">
   <div class="l-card">
+    <div class="l-card-btn">
+      <%= link_to analysis_path(@analysis) do %>
+        入力せずに終了する
+        <i class="fa-solid fa-arrow-pointer"></i>
+      <% end %>
+    </div>
     <div class="l-card-question_sentence">
       <span>なぜ</span>
       <% if @last_result.present? %>
@@ -25,15 +31,5 @@
         </div>
       <% end %>
     </div>
-    <%
-=begin%>
- <div>
-      <% @is_whies.each_with_index do |is_why, index| %>
-        <%= index + 1 %>
-        <%= is_why.result %>
-      <% end %>
-    </div> 
-<%
-=end%>
   </div>
 </div>

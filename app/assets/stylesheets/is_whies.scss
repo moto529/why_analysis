@@ -20,7 +20,18 @@
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    
+    &-btn {
+      position: fixed;
+      top: 10px;
+      right: 40px;
+      *{
+        text-decoration: none;
+      }
+      *:visited {
+        color: rgb(78, 152, 242);
+      }
+    }
+     
     &-question_sentence {
       font-size: 30px;
       font-weight: 500;
