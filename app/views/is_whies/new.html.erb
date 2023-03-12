@@ -1,14 +1,39 @@
-<div class="form_group">
-  <%= @last_result.result if @last_result %>
-  <%= form_with model: @is_why, url: analysis_is_whies_path do |f| %>
-    <%= f.label :result, "それはなぜですか？" %>
-    <%= f.text_field :result %>
-    <%= f.submit %>
-  <% end %>
-</div>
-<div>
-  <% @is_whies.each_with_index do |is_why, index| %>
-    <%= index + 1 %>
-    <%= is_why.result %>
-  <% end %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'is_whies' %>
+<% end %>
+<div class="l-main">
+  <div class="l-card">
+    <div class="l-card-question_sentence">
+      <span>なぜ</span>
+      <% if @last_result.present? %>
+        「<%= @last_result.result %>」
+      <% else %>
+        「<%= @analysis.target %>」
+      <% end %>
+    </div>
+    <div class="l-card-form_group">
+      <%= form_with model: @is_why, url: analysis_is_whies_path do |f| %>
+        <div class="l-card-form_group__label">
+          <%= f.label :result, "それはなぜですか？" %>
+        </div>
+        <div class="l-card-form_group__input">
+          <%= f.text_field :result %>
+        </div>
+        <div class="l-card-form_group__btn">
+          <%= f.submit "続ける", name: 'next' %>
+          <%= f.submit "分析を終了する", name: 'finish' %>
+        </div>
+      <% end %>
+    </div>
+    <%
+=begin%>
+ <div>
+      <% @is_whies.each_with_index do |is_why, index| %>
+        <%= index + 1 %>
+        <%= is_why.result %>
+      <% end %>
+    </div> 
+<%
+=end%>
+  </div>
 </div>
