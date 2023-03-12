@@ -68,4 +68,61 @@
       }
     }
   }
+  .l-card-result {
+    background-color: #F5F7FA;
+    max-width: 900px;
+    width: 65%;
+    border: 3px solid rgba(121, 121, 121, 0.11);
+    border-radius: 50px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding-bottom: 50px;
+    
+    &__sentence {
+      font-size: 32px;
+      font-weight: 400;
+      font-family: "MS Pゴシック";
+      padding-top: 30px;
+      text-align: center;
+      letter-spacing: 1.5px;
+      .chart {
+        color: #50C1E9;
+      }
+    }
+    &__contents {
+      width: 385px;
+      padding-top: 10px;
+      text-align: center;
+      margin: 0 auto;
+
+    }
+    &__content {
+      font-size: 18px;
+    }
+    &__good_job {
+      font-size: 20px;
+      padding-top: 20px;
+      font-weight: bolder;
+    }
+    &__btn_wrapper {
+      display: flex;
+      justify-content: center;
+    }
+    &__btn {
+      padding-top: 35px;
+      margin: 0 10px;
+      * {
+        background-color: rgba(91, 231, 196, 1);
+        width: 136px;
+        height: 40px;
+        border: 3px rgb(12, 10, 10);
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        margin: 0 auto;
+      }
+    }
+  }
 }
