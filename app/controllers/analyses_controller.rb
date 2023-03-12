@@ -8,9 +8,9 @@ class AnalysesController < ApplicationController
   def create
     @analysis = Analysis.new(analysis_params)
     if @analysis.save
-      redirect_to new_analysis_path, notice: 'Great!'
+      redirect_to new_analysis_is_why_path(@analysis.id)
     else
-      redirect_to new_analysis_path, notice: 'Sorry'
+      redirect_to new_analysis_path
     end
   end
 

@@ -1,5 +1,5 @@
 <div class="form_group">
-  <%= @last_result.result %>
+  <%= @last_result.result if @last_result %>
   <%= form_with model: @is_why, url: analysis_is_whies_path do |f| %>
     <%= f.label :result, "それはなぜですか？" %>
     <%= f.text_field :result %>
