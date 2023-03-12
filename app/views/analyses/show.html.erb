@@ -1,0 +1,23 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'analyses' %>
+<% end %>
+<div class="l-main">
+  <div class="l-card-result">
+    <div class="l-card-result__sentence">分析結果 <i class="fa-solid fa-chart-simple chart"></i></div>
+    <div class="l-card-result__contents">
+      <% @is_whies.each_with_index do |is_why, index| %>
+        <div class="l-card-result__content">
+          <%= index + 1 %>,<%= is_why.result %>
+        </div>
+        <% if index != @is_whies.length - 1 %>
+          <div class="l-card-result__arrow"><i class="fas fa-arrow-down"></i></div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="l-card-result__good_job">お疲れ様でした！</div>
+    <div class="l-card-result__btn_wrapper">
+      <div class="l-card-result__btn"><%= button_to "新しく分析する", new_analysis_path, method: :get %></div>
+      <div class="l-card-result__btn"><%= button_to "ダウンロード▼" %></div>
+    </div>
+  </div>
+</div>
