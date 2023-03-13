@@ -17,7 +17,7 @@
     <div class="l-card-result__good_job">お疲れ様でした！</div>
     <div class="l-card-result__btn_wrapper">
       <div class="l-card-result__btn"><%= button_to "新しく分析する", new_analysis_path, method: :get %></div>
-      <div class="l-card-result__btn"><%= button_to "ダウンロード▼" %></div>
+      <div class="l-card-result__btn"><%= button_to "ダウンロード▼", csv_download_analysis_path(format: :csv), method: :get %></div>
     </div>
   </div>
 </div>
