@@ -16,7 +16,6 @@ class IsWhiesController < ApplicationController
       elsif params[:finish]
         redirect_to analysis_path(@is_why.analysis_id)
       end
-      
     else
       redirect_to new_analysis_is_why_path
     end
