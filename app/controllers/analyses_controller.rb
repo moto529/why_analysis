@@ -14,6 +14,11 @@ class AnalysesController < ApplicationController
     end
   end
 
+  def show
+    @analysis = Analysis.find(params[:id])
+    @is_whies = @analysis.is_whies
+  end
+
   private
 
   def analysis_params
