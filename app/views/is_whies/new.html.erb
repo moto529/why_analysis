@@ -28,8 +28,11 @@
         <div class="l-card-form_group__btn">
           <%= f.submit "続ける", name: 'next' %>
           <%= f.submit "分析を終了する", name: 'finish' %>
+          <div class="modal_btn"><a>現状確認</a></div>
         </div>
       <% end %>
     </div>
   </div>
+  <%= render partial: "status_confirmation_window" %>
 </div>
+<%= javascript_pack_tag 'is_why/modal' %>

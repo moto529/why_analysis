@@ -1,0 +1,16 @@
+<div class="overlay"></div>
+
+<div class="modal">
+  <div class="close">&times</div>
+  <div class="modal__title">現在ここまで進んでいます</div>
+  <% @is_whies.each_with_index do |is_why, index| %>
+    <div class="modal__content">
+      <%= index + 1 %>,<%= is_why.result %>
+    </div>
+    <% if index != @is_whies.length - 1 %>
+      <div class="l-card-modal__arrow"><i class="fas fa-arrow-down"></i></div>
+    <% end %>
+  <% end %>
+</div>
+
+<section></section>
