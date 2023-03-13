@@ -4,6 +4,7 @@
 <div class="l-main">
   <div class="l-card-result">
     <div class="l-card-result__sentence">分析結果 <i class="fa-solid fa-chart-simple chart"></i></div>
+    <div class="l-card-result__target_sentence">「<%= @analysis.target %>」</div>
     <div class="l-card-result__contents">
       <% @is_whies.each_with_index do |is_why, index| %>
         <div class="l-card-result__content">
