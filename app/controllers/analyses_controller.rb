@@ -2,6 +2,7 @@
 
 class AnalysesController < ApplicationController
   include AnalysisCsvModule
+  before_action :set_variable, only: %i[show csv_download]
   
   def new
     @analysis = Analysis.new
@@ -16,14 +17,9 @@ class AnalysesController < ApplicationController
     end
   end
 
-  def show
-    @analysis = Analysis.find(params[:id])
-    @is_whies = @analysis.is_whies
-  end
+  def show; end
 
   def csv_download
-    @analysis = Analysis.find(params[:id])
-    @is_whies = @analysis.is_whies
     respond_to do |format|
       format.html
       format.csv do
@@ -36,5 +32,10 @@ class AnalysesController < ApplicationController
 
   def analysis_params
     params.require(:analysis).permit(:target).merge(user_id: session[:user_id])
+  end
+
+  def set_variable
+    @analysis = Analysis.find(params[:id])
+    @is_whies = @analysis.is_whies
   end
 end
