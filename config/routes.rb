@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root to: 'analyses#new'
   resources :analyses, only: %i[new create show] do
     resources :is_whies, only: %i[new create]
     member do
