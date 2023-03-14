@@ -26,9 +26,12 @@
           <%= f.text_field :result %>
         </div>
         <div class="l-card-form_group__btn">
-          <%= f.submit "続ける", name: 'next' %>
-          <%= f.submit "分析を終了する", name: 'finish' %>
-          <div class="modal_btn"><a>現状確認</a></div>
+          <%= f.submit "続ける", name: 'next', class: "pc" %>
+          <%= f.submit "分析を終了する", name: 'finish', class: "pc" %>
+          <div class="modal_btn pc"><a>現状確認</a></div>
+          <%= f.submit "続ける", name: 'next', class: "sp" %>
+          <%= f.submit "分析を終了する", name: 'finish', class: "sp" %>
+          <div class="modal_btn sp"><a>現状確認</a></div>
         </div>
       <% end %>
     </div>
