@@ -68,6 +68,17 @@
       }
     }
   }
+  @media screen and (max-width: 678px) {
+    .l-card {
+      width: 85%;
+      &-question_sentence {
+        font-size: 23px;
+      }
+      &-form_group {
+        width: 250px;
+      }
+   }
+  }
   .l-card-result {
     background-color: #F5F7FA;
     max-width: 900px;
@@ -94,11 +105,9 @@
       font-size: 24px;
     }
     &__contents {
-      width: 385px;
       padding-top: 10px;
       text-align: center;
       margin: 0 auto;
-
     }
     &__content {
       font-size: 18px;
@@ -124,6 +133,24 @@
         color: #fff;
         font-weight: 700;
         cursor: pointer;
+        margin: 0 auto;
+      }
+    }
+  }
+  @media screen and (max-width: 678px) {
+    .l-card-result {
+      width: 90%;
+      margin-top: 130px;
+      &__sentence {
+        font-size: 25px;
+      }
+      &__target_sentence {
+        font-size: 20px;
+        padding: 15px 0 10px 0;
+      }
+      &__contents {
+        padding-top: 10px;
+        text-align: center;
         margin: 0 auto;
       }
     }
